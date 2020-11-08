@@ -8,8 +8,7 @@ Vue.config.productionTip = false
 
 let data = {
   songs: songsList,
-  artists: artists,
-  collection: []
+  artists: artists
 }
 
 new Vue({

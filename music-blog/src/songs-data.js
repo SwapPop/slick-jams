@@ -4,7 +4,7 @@ let songsList = [
   name: "Space Ghost Coast To Coast",
   artist: "Glass Animals",
   genre: "Anti Pop",
-  image: "link.jpg"
+  image: "Dreamland_(Glass_Animals).png"
 },
 {
   id: 2,
@@ -60,7 +60,7 @@ let songsList = [
   name: "Heat Waves",
   artist: "Glass Animals",
   genre: "Anti Pop",
-  image: "link.jpg"
+  image: "Dreamland_(Glass_Animals).png"
 },
 {
   id: 10,
@@ -131,7 +131,7 @@ let songsList = [
   name: "Tangerine",
   artist: "Glass Animals",
   genre: "Anti Pop",
-  image: "link.jpg"
+  image: "Dreamland_(Glass_Animals).png"
 },
 {
   id: 20,
