@@ -16,8 +16,8 @@
     </div>
     <router-view />
     <footer class="footer">
-      <div class="footer-item"><a href="https://github.com/SwapPop/slick-jams.git">Link to GitHub Repo</a></div>
-      <div class="footer-item"><h1>&#169;Jacob Taylor 2020</h1></div>
+      <div class="footer-item"><a href="https://github.com/SwapPop/slick-jams.git">link to github repo</a></div>
+      <div class="footer-item"><h1>&#169;jacob taylor 2020</h1></div>
     </footer>
   </div>
 </template>
@@ -27,6 +27,7 @@
   margin: 0px;
   padding: 0px;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
