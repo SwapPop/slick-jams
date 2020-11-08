@@ -14,7 +14,11 @@
         </div>
       </div>
     </div>
-    <router-view/>
+    <router-view />
+    <footer class="footer">
+      <div class="footer-item"><a href="https://github.com/SwapPop/slick-jams.git">Link to GitHub Repo</a></div>
+      <div class="footer-item"><h1>&#169;Jacob Taylor 2020</h1></div>
+    </footer>
   </div>
 </template>
 
@@ -99,5 +103,38 @@ a {
 
 #links .wrapLink {
   display: flex;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #5c0e22;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  text-align: center;
+}
+
+.footer-item {
+  height: 50px;
+  color: #8f8787;
+}
+
+.footer-item a {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 24pt;
+  color: #8f8787;
+  text-decoration: none;
+}
+
+.footer-item a:hover {
+  color: #EBF5F5;
+}
+
+.footer-item a:active {
+  color: #e1f3f5;
 }
 </style>
