@@ -2,13 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import songsList from './songs-data.js'
-import artists from './mock-data.js'
+import artistList from './mock-data.js'
 
 Vue.config.productionTip = false
 
 let data = {
   songs: songsList,
-  artists: artists
+  artists: artistList
 }
 
 new Vue({

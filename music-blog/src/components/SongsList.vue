@@ -4,14 +4,16 @@
     <div v-else class="songs">
       <div class="song" v-for="song in songs" :key="song.id">
         <div class="image">
-          <img :src="'/images/'+song.image">
+          <img :src="song.image">
         </div>
         <div class="info">
-          <div class="artist">
+          <div class="namebox">
             <h1>{{song.name}}</h1>
-          </div><br>
-          <h2>{{song.artist}}</h2><br>
-          <h2>{{song.genre}}</h2>
+          </div>
+          <div class="artistbox">
+            <h2>{{song.artist}}</h2><br>
+            <h2>{{song.genre}}</h2>
+          </div>
         </div>
       </div>
     </div>
@@ -31,7 +33,6 @@ export default {
 img {
   height: 300px;
   width: 300px;
-  border: 2px solid red;
 }
   .wrapper {
     display: flex;
@@ -46,29 +47,47 @@ img {
     flex-direction: column;
     justify-content: space-around;
     min-height: 600px;
-    width: 100%;
+    width: 90%;
   }
 
   .song {
     display: flex;
     height: 300px;
     width: 100%;
-    border: 1px solid green;
-    margin-bottom: 50px;
-    background-color: #424381;
+    margin-bottom: 100px;
+    background-color: #2c3e50df;
+    color: #dddddd;
   }
 
   .image {
-    border: 2px solid blue;
     height: 300px;
     width: 300px;
   }
 
+  .namebox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    background-color: #80132f;
+  }
+
+  .artistbox {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10px 30px;
+    width: 100%;
   }
 
 

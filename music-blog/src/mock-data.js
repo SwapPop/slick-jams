@@ -1,10 +1,10 @@
-let artists = [{
+let artistList = [{
     id: 1,
     name: "Dominic Fike",
     country: "United States",
     album: "What Could Possibly Go Wrong",
     songs: ["Vampire", "Politics & Violence", "Phone Numbers", "Wurli", "Babydoll", "Rollerblades"],
-    img: "link.jpg"
+    image: require('../images/dom.jpg')
   },
   {
     id: 2,
@@ -12,7 +12,7 @@ let artists = [{
     country: "England",
     album: "Dreamland",
     songs: ["Tangerine", "Heat Waves", "Space Ghost Coast To Coast", "Tokyo Drifting (with Denzel Curry)"],
-    image: "link.jpg"
+    image: require('../images/glass.jpg')
   },
   {
     id: 3,
@@ -20,7 +20,7 @@ let artists = [{
     country: "France",
     album: "S16",
     songs: ["Goliath", "Horizons Into Battlegrounds", "In Your Likeness"],
-    image: 'link.jpg'
+    image: require('../images/woodkid.jpg')
   },
   {
     id: 4,
@@ -28,7 +28,7 @@ let artists = [{
     country: "Sweden",
     album: "Singles and EPs",
     songs: ["IMPATIENT", "CRUSH", "BACK AND FORTH", "TROJAN HORSE"],
-    image: 'link.jpg'
+    image: require('../images/sebastian.jpeg')
   },
   {
     id: 5,
@@ -36,7 +36,7 @@ let artists = [{
     country: "United States",
     album: "good things take time",
     songs: ["good things take time", "paper thin", "i think too much"],
-    image: 'link.jpg'
+    image: require('../images/christian.jpeg')
 
   },
   {
@@ -45,7 +45,7 @@ let artists = [{
     country: "United States",
     album: "our little angel - EP",
     songs: ["going out", "blind", "for the people in the back", "hello!"],
-    image: 'link.jpg'
+    image: require('../images/rm.jpg')
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ let artists = [{
     country: "Canada",
     album: "good luck have fun",
     songs: ["imma", "bad thoughts", "gone", "thankful"],
-    image: 'link.jpg'
+    image: require('../images/bb.jpg')
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ let artists = [{
     country: "United States",
     album: "Don't give me problems, give me wine",
     songs: ["Confidant", "Head In The Clouds", "Cigarettes On Patios"],
-    image: 'link.jpg'
+    image: require('../images/bbjake.jpg')
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ let artists = [{
     country: "Australia",
     album: "Bright Lights, Red Eyes - EP",
     songs: ["as long as you care", "say it over (feat. Cautious Clay)"],
-    image: 'link.jpg'
+    image: require('../images/ruel.jpg')
 
   },
   {
@@ -78,7 +78,7 @@ let artists = [{
     country: "United Kingdom",
     album: "Cherry Blossom",
     songs: ["Better", "Married In Vegas"],
-    image: 'link.jpg'
+    image: require('../images/vamps.jpeg')
   }]
 
-export default artists;
+export default artistList;

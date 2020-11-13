@@ -60,7 +60,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 5px;
   grid-template-areas: "title face links";
-  padding: 30px;
+  padding: 0px;
   background-color: #80132f;
 }
 
