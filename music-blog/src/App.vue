@@ -11,6 +11,7 @@
         <div class="wrapLink">
           <router-link to="/">discover</router-link>
           <router-link to="/artists">artist radar</router-link>
+          <router-link to="/collection">collection</router-link>
         </div>
       </div>
     </div>
@@ -83,8 +84,8 @@ a {
   font-weight: bold;
   font-size: 24pt;
   padding: 10px;
-  margin: 15px;
-  height: 35px;
+  margin: 10px;
+  height: 50px;
 }
 
 #links a:hover {

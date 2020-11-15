@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <h1 v-if="this.$root.$data.songs.length < 1">Songs Not Found</h1>
+    <h1 v-if="this.$root.$data.collection.length < 1">( your collection is empty, add songs in "discover" )</h1>
     <div v-else class="songs">
-      <div class="song" v-for="song in songs" :key="song.id">
+      <div class="song" v-for="song in collection" :key="song.id">
         <div class="image">
           <img :src="song.image">
         </div>
@@ -11,16 +11,15 @@
             <div class="buffer"></div>
             <div class="name">
               <h1>{{song.name}}</h1>
+              <h2>{{song.artist}}</h2>
             </div>
             <div class="plus">
-              <span v-if="inCollection(song)" class="tooltiptext">in collection</span>
-              <span v-else class="tooltiptext">add to collection</span>
-              <img src="../assets/plus.png" @click="addToCollection(song)"/>
+              <span class="tooltiptext">remove from collection</span>
+              <img src="../assets/minus.png" @click="removeFromCollection(song)"/>
             </div>
-          </div>
-          <div class="artistbox">
-            <h2>{{song.artist}}</h2><br>
-            <h2>{{song.genre}}</h2>
+            <div class="play">
+              <img src="../assets/play.png"/>
+            </div>
           </div>
         </div>
       </div>
@@ -30,28 +29,22 @@
 
 <script>
 export default {
-  name: 'SongsList',
+  name: 'CollectionList',
   props: {
-    songs: Array
+    collection: Array
   },
   methods: {
-    inCollection(song) {
-        return this.$root.$data.collection.includes(song);
-    },
-    addToCollection(song) {
-      if (!this.$root.$data.collection.includes(song)) {
-        this.$root.$data.collection.push(song);
-        console.log(this.$root.$data.collection);
-      }
-    },
-  },
+    removeFromCollection(song) {
+      this.$root.$data.collection.splice(this.$root.$data.collection.indexOf(song), 1);
+    }
+  }
 }
 </script>
 
 <style scoped>
 img {
-  height: 300px;
-  width: 300px;
+  height: 150px;
+  width: 150px;
 }
   .wrapper {
     display: flex;
@@ -71,16 +64,16 @@ img {
 
   .song {
     display: flex;
-    height: 300px;
+    height: 150px;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     background-color: #2c3e50df;
     color: #dddddd;
   }
 
   .image {
-    height: 300px;
-    width: 300px;
+    height: 150px;
+    width: 150px;
   }
 
   .namebox {
@@ -88,25 +81,26 @@ img {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    height: 50%;
-    background-color: #80132f;
+    height: 100%;
+    background-color: #38659c;
   }
 
   .buffer {
     float: left;
     height: 100%;
-    width: 40px;
+    width: 80px;
   }
 
   .name {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
   }
 
-  .plus {
+  .plus, .play {
     float: right;
     height: 40px;
     width: 40px;
@@ -114,27 +108,18 @@ img {
     display: inline-block;
   }
 
-  .plus img {
+  .plus img, .play img {
     height: 40px;
     width: 40px;
   }
 
-  .plus img:hover {
+  .plus img:hover, .play img:hover {
     border-radius: 15px;
     background-color: #cccccc55;
   }
 
-  .plus img:active{
+  .plus img:active, .play img:active {
     background-color: #cccccc;
-  }
-
-  .artistbox {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .info {
