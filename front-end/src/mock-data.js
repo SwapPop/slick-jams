@@ -1,5 +1,5 @@
 let artistList = [{
-    id: 1,
+    rank: 1,
     name: "Dominic Fike",
     country: "United States",
     album: "What Could Possibly Go Wrong",
@@ -7,7 +7,7 @@ let artistList = [{
     image: require('../images/dom.jpg')
   },
   {
-    id: 2,
+    rank: 2,
     name: "Glass Animals",
     country: "England",
     album: "Dreamland",
@@ -15,7 +15,7 @@ let artistList = [{
     image: require('../images/glass.jpg')
   },
   {
-    id: 3,
+    rank: 3,
     name: "Woodkid",
     country: "France",
     album: "S16",
@@ -23,7 +23,7 @@ let artistList = [{
     image: require('../images/woodkid.jpg')
   },
   {
-    id: 4,
+    rank: 4,
     name: "SEBASTIAN PAUL",
     country: "Sweden",
     album: "Singles and EPs",
@@ -31,7 +31,7 @@ let artistList = [{
     image: require('../images/sebastian.jpeg')
   },
   {
-    id: 5,
+    rank: 5,
     name: "Christian French",
     country: "United States",
     album: "good things take time",
@@ -40,7 +40,7 @@ let artistList = [{
 
   },
   {
-    id: 6,
+    rank: 6,
     name: "ROLE MODEL",
     country: "United States",
     album: "our little angel - EP",
@@ -48,7 +48,7 @@ let artistList = [{
     image: require('../images/rm.jpg')
   },
   {
-    id: 7,
+    rank: 7,
     name: "bbno$",
     country: "Canada",
     album: "good luck have fun",
@@ -56,7 +56,7 @@ let artistList = [{
     image: require('../images/bb.jpg')
   },
   {
-    id: 8,
+    rank: 8,
     name: "BabyJake",
     country: "United States",
     album: "Don't give me problems, give me wine",
@@ -64,7 +64,7 @@ let artistList = [{
     image: require('../images/bbjake.jpg')
   },
   {
-    id: 9,
+    rank: 9,
     name: "Ruel",
     country: "Australia",
     album: "Bright Lights, Red Eyes - EP",
@@ -73,7 +73,7 @@ let artistList = [{
 
   },
   {
-    id: 10,
+    rank: 10,
     name: "The Vamps",
     country: "United Kingdom",
     album: "Cherry Blossom",

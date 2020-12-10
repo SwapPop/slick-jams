@@ -2,7 +2,7 @@
     <div class="wrapper">
       <h1 v-if="this.$root.$data.artists.length < 1">Artists Not Found</h1>
       <div v-else class="artists">
-        <div class="artist" v-for="artist in artists" :key="artist.id">
+        <div class="artist" v-for="artist in artists" :key="artist.rank">
           <div class="image">
             <img :src="artist.image">
           </div>

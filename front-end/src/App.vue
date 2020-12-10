@@ -3,11 +3,14 @@
     <div id="nav">
       <div id="title">
         <router-link to="/"><h1> mtotm song picks </h1></router-link>
+        <div class="links">
+          <router-link to="/suggestions" style="font-size: 16pt">got a suggestion?</router-link>
+        </div>
       </div>
       <div id="face">
         <router-link to="/"><img alt="My Face" src="./assets/MyFaceRed.png"></router-link>
       </div>
-      <div id="links">
+      <div class="links">
         <div class="wrapLink">
           <router-link to="/">discover</router-link>
           <router-link to="/artists">artist radar</router-link>
@@ -48,7 +51,8 @@ a {
 
 #title {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   font-weight: bold;
   padding: 10px;
@@ -76,7 +80,7 @@ a {
   width: 400px;
 }
 
-#links a {
+.links a {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -88,23 +92,25 @@ a {
   height: 50px;
 }
 
-#links a:hover {
+.links a:hover {
   background-color: #cccccc55;
 }
 
-#links a.router-link-exact-active {
+.links a.router-link-exact-active {
   color: #8f8787;
 }
 
-#links {
+.links {
   grid-area: "links";
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#links .wrapLink {
+.links .wrapLink {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footer {
