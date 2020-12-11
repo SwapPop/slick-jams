@@ -236,6 +236,7 @@ input {
   width: 400px;
   height: 30px;
   font-size: 16pt;
+  margin: 5px 20px;
 }
 
 </style>
