@@ -108,8 +108,7 @@ export default {
             genre: this.songGenre
           });
         }
-        this.songButton = `submitted!
-                          got another?`;
+        this.songButton = 'submitted! another?';
         this.songButtonActive = !this.songButtonActive;
       } catch (error) {
         console.log(error);
@@ -135,7 +134,7 @@ export default {
             album: this.artistAlbum
           });
         }
-        this.artistButton = "sumbitted!";
+        this.artistButton = "sumbitted! another?";
         this.artistButtonActive = !this.artistButtonActive;
       } catch (error) {
         console.log(error);
