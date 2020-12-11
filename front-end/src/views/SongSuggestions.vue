@@ -76,7 +76,7 @@ export default {
     async deleteSong(song) {
       try {
         await axios.delete("/api/songs/" + song._id);
-        this.getItems();
+        this.getSongs();
         return true;
       } catch (error) {
         console.log(error);
