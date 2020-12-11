@@ -112,8 +112,9 @@ img {
 }
 
 .namebox h1 {
-  font-size: 28pt;
+  font-size: 36pt;
   padding: 5px 20px;
+  color: #2c3e50;
 }
 
 .buffer {
