@@ -16,7 +16,7 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="songFileChanged">
 
-        <button v-bind:class="{ active: songButtonActive }" @click="postSong">{{this.songButton}}</button>
+        <button v-bind:class="{ buttonActive: songButtonActive }" @click="postSong">{{this.songButton}}</button>
       </div>
     </div>
     <div class="add">
@@ -30,7 +30,7 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="artistFileChanged">
 
-        <button v-bind:class="{ active: artistButtonActive }" @click="postArtist">{{this.artistButton}}</button>
+        <button v-bind:class="{ buttonActive: artistButtonActive }" @click="postArtist">{{this.artistButton}}</button>
       </div>
     </div>
     <div class="links">
@@ -111,6 +111,8 @@ export default {
           country: this.artistCountry,
           image: r1.data.path,
         });
+        this.artistButton = "sumbitted!";
+        this.artistButtonActive = !this.artistButtonActive;
       } catch (error) {
         console.log(error);
       }
@@ -167,7 +169,10 @@ button {
 
 .active {
   background-color: #20f543;
-  color: black;
+}
+
+.buttonActive {
+  background-color: green;
 }
 
 h2 {
