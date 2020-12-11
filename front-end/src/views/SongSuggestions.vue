@@ -15,7 +15,7 @@
           <h1>{{song.title}}</h1>
           <div class="name">
             <h2 class="midBuffer">{{song.artist}}</h2>
-            <div class="midBuffer"></div>
+            <div class="buffer"></div>
             <h2 class="midBuffer">{{song.genre}}</h2>
           </div>
         </div>
@@ -126,6 +126,7 @@ img {
   display: flex;
   justify-content: flex-start;
   width: 20%;
+  padding: 5px 20px;
 }
 
 .name {
