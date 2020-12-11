@@ -52,7 +52,6 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
 });
 
 app.post('/api/songs', async (req, res) => {
-  console.log("you are connected!")
   const song = new Song({
     title: req.body.title,
     artist: req.body.artist,
@@ -69,6 +68,7 @@ app.post('/api/songs', async (req, res) => {
 });
 
 app.post('/api/artists', async (req, res) => {
+  console.log(req);
   const artist = new Artist({
     name: req.body.name,
     country: req.body.country,

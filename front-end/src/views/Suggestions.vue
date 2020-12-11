@@ -28,9 +28,9 @@
       <div class="form">
         <input v-bind:class="{ active: artistButtonActive }" v-model="artistName" placeholder="artist name">
         <p></p>
-        <input v-bind:class="{ active: artistButtonActive }" v-model="artistAlbum" placeholder="favorite album (optional)">
-        <p></p>
         <input v-bind:class="{ active: artistButtonActive }" v-model="artistCountry" placeholder="country of origin (optional)">
+        <p></p>
+        <input v-bind:class="{ active: artistButtonActive }" v-model="artistAlbum" placeholder="favorite album (optional)">
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="artistFileChanged">
 
