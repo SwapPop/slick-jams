@@ -11,7 +11,6 @@
         <img :src="song.image">
       </div>
       <div class="info">
-        <div class="buffer"></div>
         <div class="namebox">
           <h1>{{song.title}}</h1>
           <div class="name">
@@ -124,7 +123,7 @@ img {
 
 .name {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
