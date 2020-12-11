@@ -96,6 +96,7 @@ export default {
           genre: this.songGenre
         });
         this.getSongs();
+        this.editID = "0";
         return true;
       } catch (error) {
         console.log(error);
