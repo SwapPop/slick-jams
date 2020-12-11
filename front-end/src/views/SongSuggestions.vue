@@ -113,6 +113,7 @@ img {
 
 .namebox h1 {
   font-size: 28pt;
+  padding: 5px 20px;
 }
 
 .buffer {
@@ -127,7 +128,7 @@ img {
 
 .name {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   width: 100%;
