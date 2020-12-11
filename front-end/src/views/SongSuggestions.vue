@@ -123,7 +123,9 @@ img {
 }
 
 .midBuffer {
-  width: 25%;
+  display: flex;
+  justify-content: flex-start;
+  width: 20%;
 }
 
 .name {
