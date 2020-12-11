@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <button v-if="song._id === editCheck()" @click="saveSong">save</button>
+      <button v-if="song._id === editCheck()" @click="saveSong(song)">save</button>
       <button v-else-if="manageCheck()" @click="openEdit(song)">edit</button>
       <button v-show="manageCheck()" @click="deleteSong(song)">delete</button>
     </div>
@@ -87,6 +87,19 @@ export default {
       this.songTitle = song.title;
       this.songArtist = song.artist;
       this.songGenre = song.genre;
+    },
+    async saveSong(song) {
+      try {
+        await axios.put("/api/songs/" + song._id, {
+          title: songTitle,
+          artist: songArtist,
+          genre: songGenre
+        });
+        this.getSongs();
+        return true;
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 }

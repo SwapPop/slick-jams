@@ -116,4 +116,24 @@ app.delete('/api/songs/:id', async (req, res) => {
   }
 });
 
+app.put('/api/songs/:id', async (req, res) => {
+  try {
+    let song = await Song.findOne({
+      _id: req.params.id
+    });
+    if (req.body.title !== "") {
+      song.title = req.body.title;
+    } else {throw error;}
+    if (req.body.artist !== "") {
+      song.artist = req.body.artist;
+      song.genre = req.body.genre;
+    } else {throw error;}
+    await song.save();
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 app.listen(3030, () => console.log('Server listening on port 3030!'));
