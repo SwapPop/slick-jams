@@ -24,13 +24,13 @@
           <div class="name">
             <h2 class="midBuffer">{{song.artist}}</h2>
             <div class="buffer"></div>
-            <h2 class="midBuffer">genre: {{song.genre}}</h2>
+            <h2 class="midBuffer">{{song.genre}}</h2>
           </div>
         </div>
       </div>
       <button v-if="song._id === editCheck()" @click="saveSong">save</button>
       <button v-else-if="manageCheck()" @click="openEdit(song)">edit</button>
-      <button v-show="manageCheck()" @click="deleteSong(song._id)">delete</button>
+      <button v-show="manageCheck()" @click="deleteSong(song)">delete</button>
     </div>
   </div>
 </template>
@@ -73,9 +73,9 @@ export default {
     editCheck() {
       return this.editID;
     },
-    async deleteSong(songID) {
+    async deleteSong(song) {
       try {
-        await axios.delete("/api/songs/" + songID);
+        await axios.delete("/api/songs/" + song._id);
         this.getItems();
         return true;
       } catch (error) {
