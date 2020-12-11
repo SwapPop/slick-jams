@@ -22,16 +22,20 @@
     <div class="add">
       <h2>artist we should check out:</h2>
       <div class="form">
-        <input v-model="artistName" placeholder="artist name">
+        <input v-bind:class="{ active: artistButtonActive }" v-model="artistName" placeholder="artist name">
         <p></p>
-        <input v-model="artistAlbum" placeholder="favorite album (optional)">
+        <input v-bind:class="{ active: artistButtonActive }" v-model="artistAlbum" placeholder="favorite album (optional)">
         <p></p>
-        <input v-model="artistCountry" placeholder="country of origin (optional)">
+        <input v-bind:class="{ active: artistButtonActive }" v-model="artistCountry" placeholder="country of origin (optional)">
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="artistFileChanged">
 
         <button v-bind:class="{ active: artistButtonActive }" @click="postArtist">{{this.artistButton}}</button>
       </div>
+    </div>
+    <div class="links">
+      <router-link to="/songSuggestions">top song suggestions!</router-link>
+      <router-link to="/artistSuggestions">top artist suggestions!</router-link>
     </div>
   </div>
 </template>
@@ -111,24 +115,6 @@ export default {
         console.log(error);
       }
     },
-    async getSongs() {
-      try {
-        let response = await axios.get("/api/songs");
-        this.songs = response.data;
-        return true;
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    async getArtists() {
-      try {
-        let response = await axios.get("/api/artists");
-        this.artists = response.data;
-        return true;
-      } catch (error) {
-        console.log(error);
-      }
-    },
   }
 }
 </script>
@@ -181,10 +167,38 @@ button {
 
 .active {
   background-color: #20f543;
+  color: black;
 }
 
 h2 {
   font-size: 24pt;
+}
+
+.links a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 24pt;
+  padding: 10px;
+  margin: 10px;
+  height: 50px;
+}
+
+.links a:hover {
+  background-color: #cccccc55;
+}
+
+.links a.router-link-exact-active {
+  color: #8f8787;
+}
+
+.links {
+  grid-area: "links";
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 </style>
