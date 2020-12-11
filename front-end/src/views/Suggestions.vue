@@ -34,7 +34,7 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="artistFileChanged">
 
-        <button v-bind:class="{ buttonActive: artistButtonActive }" @click="postArtist">{{this.artistButton}}</button>
+        <button v-bind:class="{ buttonActive: artistButtonActive }" @click="postArtist()">{{this.artistButton}}</button>
       </div>
     </div>
   </div>
@@ -107,17 +107,17 @@ export default {
           formData.append('photo', this.artistFile, this.artistFile.name)
           let r1 = await axios.post('/api/photos', formData);
           await axios.post('/api/artists', {
-            title: this.artistName,
-            artist: this.artistCountry,
-            genre: this.artistAlbum,
+            name: this.artistName,
+            country: this.artistCountry,
+            album: this.artistAlbum,
             image: r1.data.path,
           });
         }
         else {
           await axios.post('/api/artists', {
-            title: this.artistName,
-            artist: this.artistCountry,
-            genre: this.artistAlbum
+            name: this.artistName,
+            country: this.artistCountry,
+            album: this.artistAlbum
           });
         }
         this.artistButton = "sumbitted!";
