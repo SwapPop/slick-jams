@@ -11,8 +11,10 @@
         <div class="namebox">
           <div class="buffer"></div>
           <div class="name">
-            <h1>{{song.title}}</h1><h2>&#8226;</h2>
-            <h2>{{song.artist}}</h2><h2>&#8226;</h2>
+            <h1>{{song.title}}</h1>
+            <p></p>
+            <h2>{{song.artist}}</h2>
+            <p></p>
             <h2>{{song.genre}}</h2>
           </div>
         </div>
