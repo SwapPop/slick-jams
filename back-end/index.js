@@ -71,8 +71,8 @@ app.post('/api/songs', async (req, res) => {
 app.post('/api/artists', async (req, res) => {
   const artist = new Artist({
     name: req.body.name,
-    album: req.body.album,
     country: req.body.country,
+    album: req.body.album,
     image: req.body.image
   });
   try {

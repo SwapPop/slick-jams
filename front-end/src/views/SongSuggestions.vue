@@ -13,11 +13,11 @@
       </div>
       <div class="info">
         <div v-if="song._id === editCheck()" class="form, namebox">
-          <input v-model="songTitle">
+          <input v-model="songTitle" placeholder="new title">
           <div class="name">
-            <input v-model="songArtist" class="midBuffer">
+            <input v-model="songArtist" class="midBuffer" placeholder="artist">
             <div class="buffer"></div>
-            <input v-model="songGenre" class="midBuffer">
+            <input v-model="songGenre" class="midBuffer" placeholder="genre">
           </div>
         </div>
         <div v-else class="namebox">
