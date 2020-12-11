@@ -12,9 +12,9 @@
           <div class="buffer"></div>
           <div class="name">
             <h2>{{song.artist}}</h2>
-            <p>&#9;&#9;</p>
+            <div class="midBuffer"></div>
             <h1>{{song.title}}</h1>
-            <p>&#9;&#9;</p>
+            <div class="midBuffer"></div>
             <h2>{{song.genre}}</h2>
           </div>
         </div>
@@ -105,6 +105,10 @@ img {
   float: left;
   height: 100%;
   width: 80px;
+}
+
+.midBuffer {
+  width: 15%;
 }
 
 .name {
