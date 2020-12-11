@@ -125,7 +125,7 @@ img {
 .midBuffer {
   display: flex;
   justify-content: flex-start;
-  width: 20%;
+  width: 220px;
   padding: 5px 20px;
 }
 
