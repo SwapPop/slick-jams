@@ -13,7 +13,7 @@
           <div class="name">
             <h2 class="midBuffer">{{song.artist}}</h2>
             <div class="midBuffer"></div>
-            <h1 class="midBuffer">{{song.title}}</h1>
+            <h1 style="width: 20%;">{{song.title}}</h1>
             <div class="midBuffer"></div>
             <h2 class="midBuffer">{{song.genre}}</h2>
           </div>
