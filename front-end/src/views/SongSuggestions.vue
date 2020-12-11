@@ -1,10 +1,11 @@
 <template>
   <div class="songSuggestions">
     <div class="heading">
-      <h1>your suggestions to us!</h1>
+      <h1>your song suggestions to us!</h1>
     </div>
     <div class="links">
       <a @click="switchManage()">manage suggestions</a>
+      <router-link to="/artistSuggestions">see artists</router-link>
     </div>
     <div class="song" v-for="song in songs" :key="song._id">
       <div class="image">

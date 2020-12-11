@@ -136,4 +136,34 @@ app.put('/api/songs/:id', async (req, res) => {
   }
 });
 
+app.delete('/api/artists/:id', async (req, res) => {
+  try {
+    await Artist.deleteOne({
+      _id: req.params.id
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.put('/api/artists/:id', async (req, res) => {
+  try {
+    let artist = await Artist.findOne({
+      _id: req.params.id
+    });
+    if (req.body.name !== "") {
+      artist.name = req.body.name;
+      artist.country = req.body.country;
+      artist.album = req.body.album;
+    } else {throw error;}
+    await artist.save();
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 app.listen(3030, () => console.log('Server listening on port 3030!'));
