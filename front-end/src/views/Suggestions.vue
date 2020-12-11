@@ -9,7 +9,7 @@
       <h2>song we should check out:</h2>
       <div class="form">
         <input v-model="songTitle" placeholder="title">
-        <p></p>
+        <p>{{this.songTitle}}</p>
         <input v-model="songArtist" placeholder="artist">
         <p></p>
         <input v-model="songGenre" placeholder="genre (optional)">
@@ -73,14 +73,23 @@ export default {
     async postSong() {
       try {
         const formData = new FormData();
-        formData.append('photo', this.songFile, this.songFile.name)
-        let r1 = await axios.post('/api/photos', formData);
-        await axios.post('/api/songs', {
-          title: this.songTitle,
-          artist: this.songArtist,
-          genre: this.songGenre,
-          image: r1.data.path,
-        });
+        if (this.songFile !== null) {
+          formData.append('photo', this.songFile, this.songFile.name)
+          let r1 = await axios.post('/api/photos', formData);
+          await axios.post('/api/songs', {
+            title: this.songTitle,
+            artist: this.songArtist,
+            genre: this.songGenre,
+            image: r1.data.path,
+          });
+        }
+        else {
+          await axios.post('/api/songs', {
+            title: this.songTitle,
+            artist: this.songArtist,
+            genre: this.songGenre
+          });
+        }
         this.songButton = "submitted!";
       } catch (error) {
         console.log(error);
