@@ -30,11 +30,10 @@ const songSchema = new mongoose.Schema({
 });
 
 const artistSchema = new mongoose.Schema({
-  rank: Int,
   name: String,
   country: String,
   album: String,
-  songs: Array,
+  // songs: Array,
   image: String
 });
 
