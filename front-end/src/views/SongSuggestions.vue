@@ -11,7 +11,7 @@
         <img :src="song.image">
       </div>
       <div class="info">
-        <div v-if="song._id === this.editID" class="form, namebox">
+        <div v-if="song._id === editCheck()" class="form, namebox">
           <input v-model="songTitle">
           <div class="name">
             <input v-model="songArtist" class="midBuffer">
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <button v-if="song._id === this.editID" @click="saveSong">save</button>
+      <button v-if="song._id === editCheck()" @click="saveSong">save</button>
       <button v-else-if="manageCheck()" @click="openEdit(song)">edit</button>
       <button v-show="manageCheck()" @click="deleteSong(song)">delete</button>
     </div>
@@ -70,6 +70,9 @@ export default {
     manageCheck() {
       return this.manage;
     },
+    editCheck() {
+      return this.editID;
+    }
     async deleteSong(song) {
       try {
         await axios.delete("/api/songs/" + song._id);
