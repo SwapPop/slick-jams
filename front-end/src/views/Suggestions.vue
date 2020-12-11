@@ -60,8 +60,8 @@ export default {
     }
   },
   created() {
-    this.getSongs();
-    this.getArtists();
+    //this.getSongs();
+    //this.getArtists();
   },
   methods: {
     songFileChanged(event) {
