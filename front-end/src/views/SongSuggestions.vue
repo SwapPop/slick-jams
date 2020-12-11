@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       manage: false,
-      editID: 0,
+      editID: "0",
       songs: [],
       songTitle: "",
       songArtist: "",
