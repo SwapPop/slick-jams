@@ -30,7 +30,7 @@
       </div>
       <button v-if="song._id === editCheck()" @click="saveSong">save</button>
       <button v-else-if="manageCheck()" @click="openEdit(song)">edit</button>
-      <button v-show="manageCheck()" @click="deleteSong(song)">delete</button>
+      <button v-show="manageCheck()" @click="deleteSong(song._id)">delete</button>
     </div>
   </div>
 </template>
@@ -73,9 +73,9 @@ export default {
     editCheck() {
       return this.editID;
     },
-    async deleteSong(song) {
+    async deleteSong(songID) {
       try {
-        await axios.delete("/api/songs/" + song._id);
+        await axios.delete("/api/songs/" + songID);
         this.getItems();
         return true;
       } catch (error) {
