@@ -12,18 +12,17 @@
       </div>
       <div class="info">
         <div class="namebox">
+          <h1>{{song.title}}</h1>
           <div class="buffer"></div>
           <div class="name">
             <h2 class="midBuffer">{{song.artist}}</h2>
             <div class="midBuffer"></div>
-            <h1 style="width: 20%;">{{song.title}}</h1>
-            <div class="midBuffer"></div>
             <h2 class="midBuffer">{{song.genre}}</h2>
           </div>
         </div>
+        <button v-show="manageCheck()">edit</button>
+        <button v-show="manageCheck()">delete</button>
       </div>
-      <button v-show="manageCheck()">edit</button>
-      <button v-show="manageCheck()">delete</button>
     </div>
   </div>
 </template>
