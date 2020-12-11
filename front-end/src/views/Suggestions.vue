@@ -16,7 +16,7 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="songFileChanged">
 
-        <button @click="postSong">post</button>
+        <button v-bind:class="{ active: songButtonActive }" @click="postSong">{{this.songButton}}</button>
       </div>
     </div>
     <div class="add">
@@ -30,7 +30,7 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="artistFileChanged">
 
-        <button @click="postArtist">post</button>
+        <button v-bind:class="{ active: artistButtonActive }" @click="postArtist">{{this.artistButton}}</button>
       </div>
     </div>
   </div>
@@ -53,6 +53,10 @@ export default {
       artistFile: null,
       songs: [],
       artists: [],
+      songButton: "submit",
+      artistButton: "submit",
+      songButtonActive: false,
+      artistButtonActive: false
     }
   },
   created() {
@@ -77,6 +81,7 @@ export default {
           genre: this.songGenre,
           image: r1.data.path,
         });
+        this.songButton = "submitted!";
       } catch (error) {
         console.log(error);
       }
@@ -162,6 +167,10 @@ button {
   border-bottom-color: #424381;
   border-top-color: #424381;
   margin: 25px;
+}
+
+.active {
+  background-color: green;
 }
 
 h2 {
