@@ -109,7 +109,7 @@ img {
 
 .name {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   width: 100%;
