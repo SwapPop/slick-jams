@@ -112,7 +112,7 @@ img {
 }
 
 .namebox h1 {
-  font-size: 36pt;
+  font-size: 32pt;
   padding: 5px 20px;
   color: #2c3e50;
 }
@@ -165,6 +165,7 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 0px 10px 25px 10px;
 }
 
 button {
