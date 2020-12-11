@@ -162,6 +162,12 @@ img {
   color: #2c3e50;
 }
 
+.namebox input {
+  font-size: 18pt;
+  padding: 5px 20px;
+  color: #2c3e50;
+}
+
 .buffer {
   float: left;
   height: 100%;
@@ -227,10 +233,9 @@ button {
 
 input {
   border-radius: 15px;
-  width: 220px;
-  height: 25px;
-  padding: 5px;
-  font-size: 20pt;
+  width: 100%;
+  height: 100%;
+  font-size: 16pt;
 }
 
 </style>
