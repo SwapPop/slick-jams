@@ -32,7 +32,7 @@ export default {
     }
   },
   created: {
-    this.getArtists();
+    getArtists();
   },
   methods: {
     async getArtists() {
