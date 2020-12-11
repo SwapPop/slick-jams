@@ -4,6 +4,10 @@
       <h1>suggestion box:</h1>
     </div>
     <p></p>
+    <div class="links">
+      <router-link to="/songSuggestions">top song suggestions!</router-link>
+      <router-link to="/artistSuggestions">top artist suggestions!</router-link>
+    </div>
     <br/>
     <div class="add">
       <h2>song we should check out:</h2>
@@ -32,10 +36,6 @@
 
         <button v-bind:class="{ buttonActive: artistButtonActive }" @click="postArtist">{{this.artistButton}}</button>
       </div>
-    </div>
-    <div class="links">
-      <router-link to="/songSuggestions">top song suggestions!</router-link>
-      <router-link to="/artistSuggestions">top artist suggestions!</router-link>
     </div>
   </div>
 </template>
@@ -124,6 +124,7 @@ export default {
 <style scoped>
 .suggestionBox {
   background-color: #dddddd;
+  padding-bottom: 50px;
 }
 
 .heading {
@@ -189,10 +190,11 @@ h2 {
   padding: 10px;
   margin: 10px;
   height: 50px;
+  background-color: #80132f;
 }
 
 .links a:hover {
-  background-color: #cccccc55;
+  background-color: #80132f55;
 }
 
 .links a.router-link-exact-active {
