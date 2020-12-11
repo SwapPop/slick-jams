@@ -91,6 +91,7 @@ export default {
           });
         }
         this.songButton = "submitted!";
+        this.songButtonActive = !this.songButtonActive;
       } catch (error) {
         console.log(error);
       }
@@ -180,6 +181,7 @@ button {
 
 .active {
   background-color: green;
+  width: 150px;
 }
 
 h2 {
