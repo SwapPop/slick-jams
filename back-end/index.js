@@ -106,7 +106,7 @@ app.get('/api/artists', async (req, res) => {
 
 app.delete('/api/songs/:id', async (req, res) => {
   try {
-    await Item.deleteOne({
+    await Song.deleteOne({
       _id: req.params.id
     });
     res.sendStatus(200);
