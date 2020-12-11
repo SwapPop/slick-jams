@@ -30,6 +30,17 @@ const songSchema = new mongoose.Schema({
   image: String
 });
 
+const artistSchema = new mongoose.Schema({
+  rank: Int,
+  name: String,
+  country: String,
+  album: String,
+  songs: Array,
+  image: String
+});
+
 const Song = mongoose.model('Song', songSchema);
+
+const Artist = mongoose.model('Artist', artistSchema);
 
 app.listen(3030, () => console.log('Server listening on port 3030!'));
