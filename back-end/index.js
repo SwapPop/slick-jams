@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost:27017/mtotm', {
 
 const multer = require('multer')
 const upload = multer({
-  dest: '../front-end/public/images/',
+  dest: '/var/www/mtotm.jacob-taylor.me/images/',
   limits: {
     fileSize: 10000000
   }
