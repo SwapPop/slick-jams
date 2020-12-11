@@ -30,8 +30,8 @@ export default {
       songs: []
     }
   },
-  created: {
-    getSongs();
+  created() {
+    this.getSongs();
   },
   methods: {
     async getSongs() {

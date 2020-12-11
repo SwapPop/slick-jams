@@ -31,8 +31,8 @@ export default {
       artists: []
     }
   },
-  created: {
-    getArtists();
+  created() {
+    this.getArtists();
   },
   methods: {
     async getArtists() {
