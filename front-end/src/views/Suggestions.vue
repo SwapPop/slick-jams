@@ -187,10 +187,11 @@ h2 {
   border-radius: 12px;
   font-weight: bold;
   font-size: 24pt;
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
   height: 50px;
-  background-color: #80132f;
+  color: #80132f;
+  background-color: #2c3e50;
 }
 
 .links a:hover {
