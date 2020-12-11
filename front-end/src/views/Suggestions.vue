@@ -20,7 +20,8 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="songFileChanged">
 
-        <button v-bind:class="{ buttonActive: songButtonActive }" @click="postSong">{{this.songButton}}</button>
+        <button v-if="!songButtonActive" @click="postSong">{{this.songButton}}</button>
+        <button v-else class="buttonActive" @click="resetSong">{{this.songButton}}</button>
       </div>
     </div>
     <div class="add">
@@ -34,7 +35,8 @@
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="artistFileChanged">
 
-        <button v-bind:class="{ buttonActive: artistButtonActive }" @click="postArtist()">{{this.artistButton}}</button>
+        <button v-if="!artistButtonActive" @click="postArtist">{{this.artistButton}}</button>
+        <button v-else class="buttonActive" @click="resetArtist">{{this.artistButton}}</button>
       </div>
     </div>
   </div>
@@ -63,16 +65,28 @@ export default {
       artistButtonActive: false
     }
   },
-  created() {
-    //this.getSongs();
-    //this.getArtists();
-  },
   methods: {
     songFileChanged(event) {
       this.songFile = event.target.files[0]
     },
     artistFileChanged(event) {
       this.artistFile = event.target.files[0]
+    },
+    resetSong() {
+      this.songButton = "submit";
+      this.songButtonActive = !this.songButtonActive;
+      this.songTitle = "";
+      this.songArtist = "";
+      this.songGenre = "";
+      this.songFile = null;
+    },
+    resetArtist() {
+      this.artistButton = "submit";
+      this.artistButtonActive = !this.artistButtonActive;
+      this.artistName = "";
+      this.artistAlbum = "";
+      this.artistCountry = "";
+      this.songFile = null;
     },
     async postSong() {
       try {
@@ -94,7 +108,8 @@ export default {
             genre: this.songGenre
           });
         }
-        this.songButton = "submitted!";
+        this.songButton = `submitted!
+                          got another?`;
         this.songButtonActive = !this.songButtonActive;
       } catch (error) {
         console.log(error);
