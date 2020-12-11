@@ -31,7 +31,7 @@
       <button v-if="song._id === this.editID" @click="saveSong">save</button>
       <button v-else-if="manageCheck()" @click="openEdit(song)">edit</button>
       <button v-show="manageCheck()" @click="deleteSong(song)">delete</button>
-
+    </div>
   </div>
 </template>
 
