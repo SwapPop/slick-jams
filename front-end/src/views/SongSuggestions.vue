@@ -233,7 +233,7 @@ button {
 
 input {
   border-radius: 15px;
-  width: 250px;
+  width: 400px;
   height: 30px;
   font-size: 16pt;
 }
