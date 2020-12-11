@@ -160,4 +160,16 @@ img {
   align-items: center;
 }
 
+button {
+  background-color: #424381;
+  width: 150px;
+  height: 60px;
+  border-radius: 50px;
+  color: #dddddd;
+  font-size: 20pt;
+  border-bottom-color: #424381;
+  border-top-color: #424381;
+  margin: 25px;
+}
+
 </style>
