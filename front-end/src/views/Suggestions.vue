@@ -3,11 +3,11 @@
     <div class="heading">
       <h1>suggestion box:</h1>
     </div>
-    <p></p>
     <div class="links">
       <router-link to="/songSuggestions">top song suggestions!</router-link>
       <router-link to="/artistSuggestions">top artist suggestions!</router-link>
     </div>
+    <p></p>
     <br/>
     <div class="add">
       <h2>song we should check out:</h2>

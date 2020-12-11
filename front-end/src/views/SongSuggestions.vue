@@ -11,8 +11,8 @@
         <div class="namebox">
           <div class="buffer"></div>
           <div class="name">
-            <h1>{{song.title}}</h1>
-            <h2>{{song.artist}}</h2>
+            <h1>{{song.title}}</h1><h2>& #8226;</h2>
+            <h2>{{song.artist}}</h2><h2>& #8226;</h2>
             <h2>{{song.genre}}</h2>
           </div>
         </div>
@@ -50,6 +50,11 @@ export default {
 </script>
 
 <style scoped>
+img {
+  height: 150px;
+  width: 150px;
+}
+
 .songSuggestions {
   background-color: #dddddd;
 }
@@ -102,7 +107,6 @@ export default {
 
 .name {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
