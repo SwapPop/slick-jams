@@ -29,6 +29,8 @@ const songSchema = new mongoose.Schema({
   image: String
 });
 
+const Song = mongoose.model('Song', songSchema);
+
 const artistSchema = new mongoose.Schema({
   name: String,
   country: String,
@@ -36,8 +38,6 @@ const artistSchema = new mongoose.Schema({
   // songs: Array,
   image: String
 });
-
-const Song = mongoose.model('Song', songSchema);
 
 const Artist = mongoose.model('Artist', artistSchema);
 
@@ -52,6 +52,7 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
 });
 
 app.post('/api/songs', async (req, res) => {
+  console.log("you are connected!")
   const song = new Song({
     title: req.body.title,
     artist: req.body.artist,
