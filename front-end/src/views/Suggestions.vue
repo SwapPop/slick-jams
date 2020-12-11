@@ -103,14 +103,23 @@ export default {
     async postArtist() {
       try {
         const formData = new FormData();
-        formData.append('photo', this.artistFile, this.artistFile.name)
-        let r1 = await axios.post('/api/photos', formData);
-        await axios.post('/api/artists', {
-          name: this.artistName,
-          album: this.artistAlbum,
-          country: this.artistCountry,
-          image: r1.data.path,
-        });
+        if (this.artistFile !== null) {
+          formData.append('photo', this.artistFile, this.artistFile.name)
+          let r1 = await axios.post('/api/photos', formData);
+          await axios.post('/api/artists', {
+            title: this.artistName,
+            artist: this.artistCountry,
+            genre: this.artistAlbum,
+            image: r1.data.path,
+          });
+        }
+        else {
+          await axios.post('/api/artists', {
+            title: this.artistName,
+            artist: this.artistCountry,
+            genre: this.artistAlbum
+          });
+        }
         this.artistButton = "sumbitted!";
         this.artistButtonActive = !this.artistButtonActive;
       } catch (error) {
