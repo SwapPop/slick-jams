@@ -8,11 +8,11 @@
     <div class="add">
       <h2>song we should check out:</h2>
       <div class="form">
-        <input v-model="songTitle" placeholder="title">
+        <input v-bind:class="{ active: songButtonActive }" v-model="songTitle" placeholder="title">
         <p>{{this.songTitle}}</p>
-        <input v-model="songArtist" placeholder="artist">
+        <input v-bind:class="{ active: songButtonActive }" v-model="songArtist" placeholder="artist">
         <p></p>
-        <input v-model="songGenre" placeholder="genre (optional)">
+        <input v-bind:class="{ active: songButtonActive }" v-model="songGenre" placeholder="genre (optional)">
         <h2>image (optional):</h2>
         <input type="file" name="photo" @change="songFileChanged">
 
@@ -169,7 +169,7 @@ input {
 
 button {
   background-color: #424381;
-  width: 120px;
+  width: 150px;
   height: 60px;
   border-radius: 50px;
   color: #dddddd;
@@ -180,8 +180,7 @@ button {
 }
 
 .active {
-  background-color: green;
-  width: 150px;
+  background-color: #20f543;
 }
 
 h2 {
