@@ -12,11 +12,11 @@
       </div>
       <div class="info">
         <div v-if="song._id === this.editID" class="form, namebox">
-          <input v-model="songTitle"></h1>
+          <input v-model="songTitle">
           <div class="name">
-            <input v-model="songArtist" class="midBuffer"></h2>
+            <input v-model="songArtist" class="midBuffer">
             <div class="buffer"></div>
-            <input v-model="songGenre" class="midBuffer"></h2>
+            <input v-model="songGenre" class="midBuffer">
           </div>
         </div>
         <div v-else class="namebox">
