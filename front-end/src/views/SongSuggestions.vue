@@ -91,9 +91,9 @@ export default {
     async saveSong(song) {
       try {
         await axios.put("/api/songs/" + song._id, {
-          title: songTitle,
-          artist: songArtist,
-          genre: songGenre
+          title: this.songTitle,
+          artist: this.songArtist,
+          genre: this.songGenre
         });
         this.getSongs();
         return true;
