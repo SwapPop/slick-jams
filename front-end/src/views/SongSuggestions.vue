@@ -29,7 +29,7 @@ export default {
     return {
       songs: []
     }
-  }
+  },
   created: {
     this.getSongs();
   },

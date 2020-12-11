@@ -30,7 +30,7 @@ export default {
     return {
       artists: []
     }
-  }
+  },
   created: {
     this.getArtists();
   },
