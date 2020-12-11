@@ -1,6 +1,6 @@
 module.exports = {
   devServer: {
-    proxy: 'tickets.jacob-taylor.me/api',
+    proxy: 'http://localhost:8000',
     disableHostCheck: true
   }
 }
