@@ -92,9 +92,9 @@ export default {
     async saveArtist(artist) {
       try {
         await axios.put("/api/artists/" + artist._id, {
-          title: this.artistName,
-          artist: this.artistCountry,
-          genre: this.artistAlbum
+          name: this.artistName,
+          country: this.artistCountry,
+          album: this.artistAlbum
         });
         this.getArtists();
         this.editID = "0";
