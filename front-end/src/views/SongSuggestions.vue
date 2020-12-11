@@ -225,4 +225,12 @@ button {
   margin: 25px;
 }
 
+input {
+  border-radius: 15px;
+  width: 220px;
+  height: 25px;
+  padding: 5px;
+  font-size: 20pt;
+}
+
 </style>
