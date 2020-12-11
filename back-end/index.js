@@ -104,4 +104,16 @@ app.get('/api/artists', async (req, res) => {
   }
 });
 
+app.delete('/api/songs/:id', async (req, res) => {
+  try {
+    await Item.deleteOne({
+      _id: req.params.id
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 app.listen(3030, () => console.log('Server listening on port 3030!'));

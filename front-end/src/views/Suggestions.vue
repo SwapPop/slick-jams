@@ -13,7 +13,7 @@
       <h2>song we should check out:</h2>
       <div class="form">
         <input v-bind:class="{ active: songButtonActive }" v-model="songTitle" placeholder="title">
-        <p>{{this.songTitle}}</p>
+        <p></p>
         <input v-bind:class="{ active: songButtonActive }" v-model="songArtist" placeholder="artist">
         <p></p>
         <input v-bind:class="{ active: songButtonActive }" v-model="songGenre" placeholder="genre (optional)">

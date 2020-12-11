@@ -11,18 +11,27 @@
         <img :src="song.image">
       </div>
       <div class="info">
-        <div class="namebox">
+        <div v-if="song._id === this.editID" class="form, namebox">
+          <h1 v-model="songTitle"></h1>
+          <div class="name">
+            <h2 v-model="songArtist" class="midBuffer"></h2>
+            <div class="buffer"></div>
+            <h2 v-model="songGenre" class="midBuffer"></h2>
+          </div>
+        </div>
+        <div v-else class="namebox">
           <h1>{{song.title}}</h1>
           <div class="name">
             <h2 class="midBuffer">{{song.artist}}</h2>
             <div class="buffer"></div>
-            <h2 class="midBuffer">{{song.genre}}</h2>
+            <h2 class="midBuffer">genre: {{song.genre}}</h2>
           </div>
         </div>
       </div>
-      <button v-show="manageCheck()">edit</button>
-      <button v-show="manageCheck()">delete</button>
-    </div>
+      <button v-if="song._id === this.editID" @click="saveSong">save</button>
+      <button v-else-if="manageCheck()" @click="openEdit(song)">edit</button>
+      <button v-show="manageCheck()" @click="deleteSong(song)">delete</button>
+
   </div>
 </template>
 
@@ -35,7 +44,11 @@ export default {
   data() {
     return {
       manage: false,
-      songs: []
+      editID: 0,
+      songs: [],
+      songTitle: "",
+      songArtist: "",
+      songGenre: "",
     }
   },
   created() {
@@ -56,6 +69,21 @@ export default {
     },
     manageCheck() {
       return this.manage;
+    },
+    async deleteSong(song) {
+      try {
+        await axios.delete("/api/songs/" + song._id);
+        this.getItems();
+        return true;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    openEdit(song) {
+      this.editID = song._id;
+      this.songTitle = song.title;
+      this.songArtist = song.artist;
+      this.songGenre = song.genre;
     }
   },
 }
@@ -91,7 +119,7 @@ img {
   display: flex;
   height: 150px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: #2c3e50df;
   color: #dddddd;
 }
@@ -165,7 +193,7 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0px 10px 25px 10px;
+  margin: 0px 10px 50px 10px;
 }
 
 button {
