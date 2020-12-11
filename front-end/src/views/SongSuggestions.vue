@@ -72,7 +72,7 @@ export default {
     },
     editCheck() {
       return this.editID;
-    }
+    },
     async deleteSong(song) {
       try {
         await axios.delete("/api/songs/" + song._id);
@@ -87,7 +87,7 @@ export default {
       this.songTitle = song.title;
       this.songArtist = song.artist;
       this.songGenre = song.genre;
-    }
+    },
   },
 }
 </script>
