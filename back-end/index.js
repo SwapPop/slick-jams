@@ -83,4 +83,24 @@ app.post('/api/artists', async (req, res) => {
   }
 });
 
+app.get('/api/songs', async (req, res) => {
+  try {
+    let songs = await Song.find();
+    res.send(songs);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.get('/api/artists', async (req, res) => {
+  try {
+    let artists = await Artist.find();
+    res.send(artists);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 app.listen(3030, () => console.log('Server listening on port 3030!'));
