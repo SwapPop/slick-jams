@@ -12,8 +12,8 @@
       </div>
       <div class="info">
         <div class="namebox">
-          <h1>{{song.title}}</h1>
           <div class="buffer"></div>
+          <h1>{{song.title}}</h1>
           <div class="name">
             <h2 class="midBuffer">{{song.artist}}</h2>
             <div class="midBuffer"></div>
@@ -91,6 +91,7 @@ img {
 
 .song {
   display: flex;
+  flex-direction: column;
   height: 150px;
   width: 100%;
   margin-bottom: 20px;
@@ -119,7 +120,7 @@ img {
 }
 
 .midBuffer {
-  width: 15%;
+  width: 25%;
 }
 
 .name {
