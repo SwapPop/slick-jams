@@ -20,9 +20,9 @@
             <h2 class="midBuffer">{{song.genre}}</h2>
           </div>
         </div>
-        <button v-show="manageCheck()">edit</button>
-        <button v-show="manageCheck()">delete</button>
       </div>
+      <button v-show="manageCheck()">edit</button>
+      <button v-show="manageCheck()">delete</button>
     </div>
   </div>
 </template>
@@ -91,7 +91,6 @@ img {
 
 .song {
   display: flex;
-  flex-direction: column;
   height: 150px;
   width: 100%;
   margin-bottom: 20px;
